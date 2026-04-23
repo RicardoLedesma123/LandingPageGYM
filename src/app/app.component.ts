@@ -161,8 +161,8 @@ import { AdminComponent } from './components/admin/admin.component';
           
           <div class="map-box">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.815234259837!2d-102.24641902422776!3d21.87424915814041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee783936359f%3A0xc34a065187786445!2sPlaza%20Vallarta!5e0!3m2!1ses-419!2smx!4v1713814500000!5m2!1ses-419!2smx" 
-              width="100%" height="100%" style="border:0; border-radius: 12px; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy">
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3702.3274945763264!2d-102.23849668453472!3d21.883030885541624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429f1f3c837ccbd%3A0xd42d06c61b812dc8!2sAv.%20Vallarta%20301-D%2C%20Vistas%20de%20Oriente%2C%2020196%20Aguascalientes%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1745426785086!5m2!1ses-419!2smx" 
+              width="100%" height="100%" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy">
             </iframe>
           </div>
         </div>
