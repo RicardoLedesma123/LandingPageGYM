@@ -1,0 +1,135 @@
+<div class="app-container">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="logo">ELITE<span>GYM</span></div>
+      <div class="nav-links">
+        <a href="#services">Servicios</a>
+        <a href="#transformations">Resultados</a>
+        <a href="#booking" class="btn btn-primary btn-sm">Agendar Cita</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="gradient-text">Transforma tu Cuerpo y Mente</h1>
+        <p class="hero-subtitle">Asesorías personalizadas de entrenamiento y nutrición para alcanzar tu máximo potencial.</p>
+        <div class="hero-btns">
+          <a href="#booking" class="btn btn-primary">Empieza Ahora</a>
+          <a href="#services" class="btn btn-outline">Ver Servicios</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Nuestras <span>Asesorías</span></h2>
+      <div class="services-grid">
+        <div class="glass-card">
+          <div class="icon">💪</div>
+          <h3>Entrenamiento</h3>
+          <p>Rutinas adaptadas a tu nivel, objetivos y equipo disponible. Seguimiento semanal y ajustes dinámicos.</p>
+        </div>
+        <div class="glass-card">
+          <div class="icon">🥗</div>
+          <h3>Nutrición</h3>
+          <p>Planes alimenticios flexibles, sin dietas extremas. Aprende a comer según lo que tu cuerpo necesita.</p>
+        </div>
+        <div class="glass-card">
+          <div class="icon">📈</div>
+          <h3>Seguimiento 24/7</h3>
+          <p>Contacto directo vía WhatsApp para resolver dudas y mantener la motivación al máximo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformations Section -->
+  <section id="transformations" class="transformations">
+    <div class="container">
+      <h2 class="section-title">Casos de <span>Éxito</span></h2>
+      <div class="transformation-grid">
+        <div class="t-card">
+          <div class="img-compare">
+            <div class="before">
+              <span>Antes</span>
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400" alt="Antes">
+            </div>
+            <div class="after">
+              <span>Después</span>
+              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2ec617?auto=format&fit=crop&q=80&w=400" alt="Después">
+            </div>
+          </div>
+          <p class="t-info">"Perdí 15kg y gané fuerza que nunca imaginé." - Juan R.</p>
+        </div>
+        <!-- Add more cases as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking">
+    <div class="container">
+      <div class="booking-wrapper glass-card">
+        <div class="booking-info">
+          <h2>Reserva tu <span>Cita</span></h2>
+          <p>Agenda una llamada de diagnóstico gratuita para conocer tus objetivos.</p>
+          <div class="contact-methods">
+            <p>📍 Calle Deporte 123, Ciudad Fitness</p>
+            <p>📞 +123 456 7890</p>
+          </div>
+        </div>
+        <form class="booking-form" (submit)="onSubmit($event)">
+          <input type="text" placeholder="Nombre Completo" required [(ngModel)]="bookingData.name" name="name">
+          <input type="email" placeholder="Email" required [(ngModel)]="bookingData.email" name="email">
+          <select [(ngModel)]="bookingData.service" name="service">
+            <option value="training">Asesoría Entrenamiento</option>
+            <option value="nutrition">Asesoría Nutrición</option>
+            <option value="both">Plan Integral</option>
+          </select>
+          <input type="date" required [(ngModel)]="bookingData.date" name="date">
+          <button type="submit" class="btn btn-primary">Agendar con n8n</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (n8n Questions) -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">¿Tienes <span>Preguntas?</span></h2>
+      <div class="chat-mock glass-card">
+        <div class="chat-history">
+          <div class="bot-msg">¡Hola! Soy tu asistente IA de Elite Gym. ¿En qué puedo ayudarte hoy?</div>
+          <div class="user-msg" *ngIf="userQuestion">{{ userQuestion }}</div>
+          <div class="bot-msg" *ngIf="botResponse">{{ botResponse }}</div>
+        </div>
+        <div class="chat-input-area">
+          <input type="text" placeholder="Escribe tu pregunta..." [(ngModel)]="questionText">
+          <button (click)="askQuestion()" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="location">
+    <div class="container">
+      <h2 class="section-title">Nuestra <span>Ubicación</span></h2>
+      <div class="map-container glass-card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.142293761144!2d-73.98731968459391!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1625501861751!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Elite Gym Consultancy. Potenciado por Angular & n8n.</p>
+    </div>
+  </footer>
+</div>

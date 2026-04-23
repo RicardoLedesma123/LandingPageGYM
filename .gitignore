@@ -1,0 +1,22 @@
+# === SEGURIDAD - NUNCA SUBIR ===
+server/.env
+server/google-key.json
+.env
+
+# === DEPENDENCIAS ===
+node_modules/
+server/node_modules/
+
+# === BUILD ===
+dist/
+.angular/
+
+# === VERCEL ===
+.vercel
+
+# === SISTEMA ===
+.DS_Store
+Thumbs.db
+
+.vercel
+.env*.local
