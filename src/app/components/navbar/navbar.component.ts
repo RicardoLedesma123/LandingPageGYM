@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
         <div class="nav-links" [class.mobile-open]="isMobileOpen()">
           <a href="#sobre-mi" (click)="closeMenu()">Sobre Mí</a>
           <a href="#servicios" (click)="closeMenu()">Servicios</a>
+          <a href="#pricing" (click)="closeMenu()">Planes</a>
+          <a href="#calculadora" (click)="closeMenu()">Calculadora</a>
           <a href="#resultados" (click)="closeMenu()">Resultados</a>
           <a href="#agenda" class="btn btn-primary btn-sm">Reserva tu Cita</a>
         </div>

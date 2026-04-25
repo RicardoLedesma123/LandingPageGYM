@@ -6,6 +6,9 @@ import { BookingComponent } from './components/booking/booking.component';
 import { AboutTrainerComponent } from './components/about-trainer/about-trainer.component';
 import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-button.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { SiubitPreviewComponent } from './components/siubit-preview/siubit-preview.component';
+import { PricingComponent } from './components/pricing/pricing.component';
+import { FitnessCalculatorComponent } from './components/fitness-calculator/fitness-calculator.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +20,10 @@ import { AdminComponent } from './components/admin/admin.component';
     BookingComponent, 
     AboutTrainerComponent,
     WhatsappButtonComponent,
-    AdminComponent
+    AdminComponent,
+    SiubitPreviewComponent,
+    PricingComponent,
+    FitnessCalculatorComponent
   ],
   template: `
     <!-- Switch between Admin and Landing -->
@@ -77,6 +83,8 @@ import { AdminComponent } from './components/admin/admin.component';
       </div>
     </section>
 
+    <app-pricing></app-pricing>
+
     <!-- Transformations (CAROUSEL) -->
     <section id="resultados" class="section-padding results-v">
       <div class="container">
@@ -121,6 +129,8 @@ import { AdminComponent } from './components/admin/admin.component';
         </div>
       </div>
     </section>
+
+    <app-fitness-calculator id="calculadora"></app-fitness-calculator>
 
     <app-booking id="agenda"></app-booking>
 
@@ -204,6 +214,7 @@ import { AdminComponent } from './components/admin/admin.component';
     </footer>
 
     <app-whatsapp-button></app-whatsapp-button>
+    <app-siubit-preview></app-siubit-preview>
     </ng-container>
 
     <ng-template #adminTmpl>

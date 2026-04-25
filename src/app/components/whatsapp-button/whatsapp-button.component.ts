@@ -176,7 +176,8 @@ export class WhatsappButtonComponent {
   sendMessage() {
     const defaultMsg = 'Hola, vi tu página de Volcano Gym y quiero agendar una cita contigo.';
     const finalMsg = this.userMessage.trim() || defaultMsg;
-    const url = `https://wa.me/524492610335?text=${encodeURIComponent(finalMsg)}`;
+    // Keeping the original number for the gym
+    const url = `https://wa.me/524492041451?text=${encodeURIComponent(finalMsg)}`;
     window.open(url, '_blank');
     this.isChatOpen.set(false);
     this.userMessage = '';
