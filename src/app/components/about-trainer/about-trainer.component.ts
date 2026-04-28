@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
       <div class="container grid-container">
         <div class="image-area">
           <div class="image-wrapper">
-            <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&q=80&w=600" alt="Sobre Mí">
+            <img src="assets/trainer-presentation.png" alt="Sobre Mí">
             <div class="accent-frame-top"></div>
             <div class="accent-frame-bottom"></div>
           </div>
@@ -56,9 +56,10 @@ import { CommonModule } from '@angular/common';
     
     .grid-container {
       display: grid;
-      grid-template-columns: 45% 55%;
-      gap: 60px;
+      grid-template-columns: 4fr 5fr;
+      gap: 40px;
       align-items: center;
+      width: 100%;
     }
 
     .image-wrapper {
@@ -67,7 +68,6 @@ import { CommonModule } from '@angular/common';
       img { 
         width: 100%; 
         border-radius: 4px; 
-        filter: brightness(0.9) contrast(1.1);
         display: block;
       }
       
@@ -118,7 +118,12 @@ import { CommonModule } from '@angular/common';
 
     @media (max-width: 768px) {
       .grid-container { grid-template-columns: 1fr; }
-      .mini-stats { flex-wrap: wrap; }
+      .mini-stats { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        text-align: center;
+        gap: 20px;
+      }
     }
   `]
 })

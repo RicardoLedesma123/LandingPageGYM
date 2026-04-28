@@ -22,9 +22,9 @@ import { CommonModule } from '@angular/common';
               <img src="assets/siubit-new-icon.png" alt="SiuBit">
             </div>
             <div class="text-bubble">
-              <p><strong>¡Hola! Bienvenido/a.</strong> 👋</p>
-              <p>Esta es una <strong>DEMO</strong> de SiuBit Software. Creamos sitios web de alta calidad como este para potenciar tu marca.</p>
-              <p><strong>¿Te gusta este diseño?</strong> Contáctame y hagamos realidad tu próximo gran sitio.</p>
+              <p><strong>¿Te gusta este diseño?</strong> 👋</p>
+              <p>En <strong>SiuBit Software</strong> podemos personalizar cada sección y funcionalidad basándonos en tus gustos y necesidades únicas.</p>
+              <p>Lleva tu presencia digital al siguiente nivel con una plataforma profesional hecha a tu medida.</p>
             </div>
           </div>
           
@@ -33,7 +33,7 @@ import { CommonModule } from '@angular/common';
               <div class="wa-icon-container">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
               </div>
-              <span>Me interesa un sitio así</span>
+              <span>Quiero mi sitio personalizado</span>
             </button>
           </div>
         </div>
@@ -246,13 +246,13 @@ import { CommonModule } from '@angular/common';
 
     @media (max-width: 600px) {
       .siubit-container { 
-        right: 85px; 
+        right: 140px; 
         bottom: 25px; 
       }
       .chat-bubble { 
         width: calc(100vw - 30px); 
         max-width: 360px;
-        right: -65px; 
+        right: -120px; 
         bottom: 0;
       }
       .chat-header {
@@ -288,7 +288,7 @@ export class SiubitPreviewComponent {
 
   contactWhatsApp() {
     const phoneNumber = '4492610335';
-    const message = 'Hola SiuBit Software, me interesa un sitio web como la demo de Volcano Gym.';
+    const message = 'Hola SiuBit Software, me interesa cotizar un sitio web personalizado como la demo de Volcano Gym.';
     const url = `https://wa.me/52${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   }

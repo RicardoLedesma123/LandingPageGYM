@@ -161,7 +161,15 @@ import { FormsModule } from '@angular/forms';
     }
 
     @media (max-width: 768px) {
-      .chat-bubble { width: 90vw; right: 0; }
+      .chat-bubble { 
+        width: calc(100vw - 30px); 
+        max-width: 350px;
+        right: 0; 
+      }
+      .wa-container {
+        right: 15px;
+        bottom: 15px;
+      }
     }
   `]
 })

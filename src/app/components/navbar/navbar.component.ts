@@ -108,14 +108,15 @@ import { CommonModule } from '@angular/common';
       .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         height: 100vh;
         width: 70%;
         background: #141414;
         flex-direction: column;
         justify-content: center;
-        transition: 0.4s;
-        &.mobile-open { right: 0; }
+        transition: 0.4s ease;
+        transform: translateX(100%);
+        &.mobile-open { transform: translateX(0); }
       }
     }
   `]

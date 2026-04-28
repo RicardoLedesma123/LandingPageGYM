@@ -25,8 +25,7 @@ import { CommonModule } from '@angular/common';
         </div>
       </div>
       <div class="hero-bg-image">
-        <!-- Placeholder for a high-quality photo of the trainer -->
-        <img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?auto=format&fit=crop&q=80&w=1200" alt="Entrenadora Personal">
+        <img src="assets/hero-trainer.png" alt="Entrenadora Personal">
       </div>
       <div class="scroll-indicator">
         <span>SCROLL</span>
@@ -57,7 +56,7 @@ import { CommonModule } from '@angular/common';
         height: 100%; 
         object-fit: cover; 
         object-position: center;
-        filter: grayscale(20%) brightness(0.8);
+        filter: grayscale(0%) brightness(0.9);
       }
       &::after {
         content: '';
@@ -97,10 +96,12 @@ import { CommonModule } from '@angular/common';
       }
 
       h1 {
-        font-size: clamp(44px, 7vw, 88px);
-        line-height: 1;
+        font-size: clamp(36px, 10vw, 72px);
+        line-height: 1.1;
         margin-bottom: 30px;
         text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        max-width: 100%;
+        overflow-wrap: break-word;
       }
 
       .description {
@@ -152,7 +153,12 @@ import { CommonModule } from '@angular/common';
     @media (max-width: 768px) {
       .hero-bg-image { width: 100%; opacity: 0.5; }
       .hero-content { text-align: center; max-width: 100%; display: flex; flex-direction: column; align-items: center; }
-      .hero-btns { flex-direction: column; width: 100%; }
+      .hero-btns { 
+        flex-direction: column; 
+        width: 100%; 
+        gap: 15px;
+      }
+      .btn { width: 100%; padding: 14px 20px; }
       .accent-line { margin: 0 auto 25px !important; }
     }
   `]

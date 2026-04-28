@@ -58,7 +58,7 @@ import { FitnessCalculatorComponent } from './components/fitness-calculator/fitn
             <div class="badge">RECOMENDADO</div>
             <div class="icon">⚡</div>
             <div class="line"></div>
-            <h3>Transformación Completa</h3>
+            <h3>Transformación Total</h3>
             <p>El programa definitivo: Entrenamiento + Nutrición con acompañamiento integral diario.</p>
             <ul>
               <li>✓ Todo lo de entrenamiento</li>
@@ -71,7 +71,7 @@ import { FitnessCalculatorComponent } from './components/fitness-calculator/fitn
           <div class="glass-card s-card">
             <div class="icon">🥗</div>
             <div class="line"></div>
-            <h3>Plan de Nutrición</h3>
+            <h3>Plan Nutricional Pro</h3>
             <p>Tu alimentación es clave. Diseño planes adaptados a tu vida, tus gustos y tus metas.</p>
             <ul>
               <li>✓ Consulta nutricional</li>
@@ -196,9 +196,9 @@ import { FitnessCalculatorComponent } from './components/fitness-calculator/fitn
           </div>
           <div>
             <h4>Contacto</h4>
-            <p>📍 <strong>Plaza Vallarta</strong></p>
+            <p><strong>Plaza Vallarta</strong></p>
             <p>Av. Vallarta 301-D, Vistas de Oriente, 20196 Aguascalientes, Ags.</p>
-            <p class="mt-10">📱 449 204 1451</p>
+            <p class="mt-10">449 204 1451</p>
           </div>
           <div>
             <h4>Horarios</h4>
@@ -408,6 +408,13 @@ import { FitnessCalculatorComponent } from './components/fitness-calculator/fitn
       .footer-grid { grid-template-columns: 1fr; gap: 40px; }
       .before-after-box { grid-template-columns: 1fr; }
       .images-container { height: 350px; }
+      .services-grid { grid-template-columns: 1fr !important; }
+      .location-grid { 
+        grid-template-columns: 1fr !important; 
+        padding: 25px 15px !important; 
+        gap: 30px;
+      }
+      .map-box { height: 250px; }
     }
 
     .location-v { background-color: #050505; }
@@ -468,24 +475,24 @@ export class AppComponent {
       program: 'Transformación Completa',
       achievement: '-15 KG EN 12 SEMANAS',
       quote: 'Nunca pensé que podría verme así. Gracias Danna por creer en mí cuando yo no lo hacía.',
-      before: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=600',
-      after: 'https://images.unsplash.com/photo-1507398941214-57f1cca440cd?auto=format&fit=crop&q=80&w=600'
+      before: 'assets/antes1.jpg',
+      after: 'assets/Despues1.jpg'
     },
     {
-      name: 'Carlos R.',
+      name: 'Mariana G.',
       program: 'Entrenamiento Personal',
-      achievement: '+8 KG MÚSCULO EN 16 SEMANAS',
-      quote: 'Danna cambió mi enfoque totalmente. Los resultados superaron mis expectativas en tiempo récord.',
-      before: 'https://images.unsplash.com/photo-1583454110551-21f2fa2ec617?auto=format&fit=crop&q=80&w=600',
-      after: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600'
+      achievement: 'DEFINICIÓN Y FUERZA EN 16 SEMANAS',
+      quote: 'Danna me ayudó a encontrar la fuerza que no sabía que tenía. El cambio físico es increíble, pero la confianza que gané es lo mejor.',
+      before: 'assets/antes2.jpg',
+      after: 'assets/despues2.jpg'
     },
     {
       name: 'Sofía L.',
       program: 'Plan Nutrición',
       achievement: '-12 KG EN 10 SEMANAS',
       quote: 'Por fin entendí cómo comer para nutrirme y no solo para llenar el estómago. Una experiencia brutal.',
-      before: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=600',
-      after: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=600'
+      before: 'assets/antes3.jpg',
+      after: 'assets/despues3.jpg'
     }
   ];
 

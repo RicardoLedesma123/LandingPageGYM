@@ -190,7 +190,7 @@ interface CalendarDay {
     </section>
   `,
   styles: [`
-    .booking-section { background-color: #0B0B0B; }
+    .booking-section { background-color: #0B0B0B; overflow: hidden; }
     .mb-50 { margin-bottom: 50px; }
     .mt-30 { margin-top: 30px; }
     .text-center { text-align: center; }
@@ -455,7 +455,20 @@ interface CalendarDay {
     }
 
     @media (max-width: 768px) {
+      .stepper-header { 
+        margin-bottom: 30px; 
+        .step .label { font-size: 10px; }
+        .line { margin: 0 10px; }
+      }
       .form-grid { grid-template-columns: 1fr; }
+      .step-actions {
+        gap: 10px;
+        .btn {
+          flex: 1;
+          padding: 14px 10px;
+          font-size: 13px;
+        }
+      }
     }
 
     .fade-in { animation: fadeIn 0.5s ease; }
@@ -484,9 +497,9 @@ export class BookingComponent implements OnInit {
   });
 
   bookingTypes: BookingType[] = [
-    { id: 'training', name: 'Entrenamiento Personal', duration: 60, icon: '🏋️', description: 'Evaluación y sesión 1 a 1 para maximizar tus resultados.', price: 350 },
-    { id: 'nutrition', name: 'Consulta Nutrición', duration: 45, icon: '🥗', description: 'Plan de alimentación personalizado basado en ciencia.', price: 500 },
-    { id: 'complete', name: 'Transformación Total', duration: 90, icon: '⚡', description: 'Entrenamiento + Nutrición en una sesión integrada.', price: 750 }
+    { id: 'training', name: 'Entrenamiento Personal', duration: 60, icon: '🏋️', description: 'Evaluación y sesión 1 a 1 para maximizar tus resultados.', price: 800 },
+    { id: 'nutrition', name: 'Plan Nutricional Pro', duration: 45, icon: '🥗', description: 'Plan de alimentación personalizado basado en ciencia.', price: 600 },
+    { id: 'complete', name: 'Transformación Total', duration: 90, icon: '⚡', description: 'Entrenamiento + Nutrición en una sesión integrada.', price: 1500 }
   ];
 
   ngOnInit() {
@@ -546,13 +559,36 @@ export class BookingComponent implements OnInit {
   nextStep() {
     if (this.step() === 1 && this.selectedType()) {
       this.step.set(2);
+      this.scrollToBooking();
     } else if (this.step() === 2 && this.selectedTime()) {
       this.step.set(3);
+      this.scrollToBooking();
     }
   }
 
   prevStep() {
-    if (this.step() > 1) this.step.update(s => s - 1);
+    if (this.step() > 1) {
+      this.step.update(s => s - 1);
+      this.scrollToBooking();
+    }
+  }
+
+  private scrollToBooking() {
+    setTimeout(() => {
+      const element = document.getElementById('booking');
+      if (element) {
+        const offset = 80; // Margin for navbar
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   }
 
   async onDateChange() {

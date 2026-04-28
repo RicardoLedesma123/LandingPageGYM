@@ -21,12 +21,20 @@ $font-body: 'Inter', sans-serif;
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: $color-bg-primary;
   color: $color-text-primary;
   font-family: $font-body;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 // QUITAMOS SUBRAYADOS Y COLORES AZULES POR DEFECTO
@@ -36,11 +44,15 @@ a {
   transition: 0.3s ease;
 }
 
-h1, h2, h3, .heading-font {
+h1, h2, h3, h4, h5, h6, .heading-font {
   font-family: $font-heading;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 // 3. UTILITIES
@@ -48,9 +60,14 @@ h1, h2, h3, .heading-font {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.section-padding { padding: 100px 0; }
+.section-padding { 
+  padding: 100px 0; 
+  overflow: hidden; 
+}
 
 .subtitle {
   color: $color-accent;
@@ -63,8 +80,8 @@ h1, h2, h3, .heading-font {
 }
 
 .section-title {
-  font-size: clamp(32px, 5vw, 56px);
-  line-height: 1.1;
+  font-size: clamp(24px, 5vw, 56px);
+  line-height: 1.2;
   margin-bottom: 40px;
 }
 
@@ -114,5 +131,15 @@ h1, h2, h3, .heading-font {
   &:hover {
     border-color: $color-accent;
     transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 600px) {
+  * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .container {
+    padding: 0 15px;
   }
 }

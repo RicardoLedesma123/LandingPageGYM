@@ -112,7 +112,7 @@ app.post('/api/bookings', async (req, res) => {
     const { data: existing, error: checkError } = await supabase
       .from('appointments')
       .select('id')
-      .eq('client_email', clientEmail)
+      .eq('client_phone', clientPhone)
       .gte('appointment_date', startOfWeek.toISOString().split('T')[0])
       .lte('appointment_date', endOfWeek.toISOString().split('T')[0])
       .eq('status', 'confirmed');

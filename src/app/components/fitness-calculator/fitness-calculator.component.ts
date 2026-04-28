@@ -96,20 +96,18 @@ import { FormsModule } from '@angular/forms';
     </section>
   `,
   styles: [`
-    .calculator-section {
-      padding: 100px 0;
-      background: #000;
-    }
-
-    .calculator-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
 
     .subtitle { color: #E4007C; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; }
-    .section-title { font-size: 42px; margin: 15px 0; span { color: #E4007C; } }
+    .section-title { 
+      font-size: clamp(24px, 7vw, 42px); 
+      margin: 15px 0; 
+      line-height: 1.2;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      span { color: #E4007C; display: inline-block; max-width: 100%; } 
+    }
     
     .benefits-list {
       margin-top: 40px;
@@ -185,10 +183,31 @@ import { FormsModule } from '@angular/forms';
     .fade-in { animation: fadeIn 0.5s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    @media (max-width: 992px) {
-      .calculator-grid { grid-template-columns: 1fr; gap: 40px; }
-      .calculator-info { text-align: center; }
-      .section-title { font-size: 32px; }
+    .calculator-section {
+      padding: 80px 0;
+      background: #000;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+    }
+
+    @media (max-width: 850px) {
+      .calculator-grid { grid-template-columns: 1fr !important; gap: 20px; }
+      .calculator-info { text-align: center; padding: 0 10px; }
+      .section-title { font-size: 24px !important; text-align: center; }
+      .calculator-card { padding: 20px 10px !important; margin: 0; width: 100%; }
+      .form-grid { grid-template-columns: 1fr !important; gap: 15px; }
+      .input-group.full { grid-column: span 1; }
+      .actions { flex-direction: column; gap: 10px; }
+      .btn { width: 100%; }
+      .benefits-list { display: none; }
     }
   `]
 })

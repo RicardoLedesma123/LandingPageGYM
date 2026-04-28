@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
           <!-- Plan 1 -->
           <div class="price-card">
             <div class="card-header">
-              <h3>Entrenamiento</h3>
+              <h3>Entrenamiento Personal</h3>
               <div class="price"><span>$</span>800<small>/mes</small></div>
             </div>
             <ul class="features">
@@ -36,7 +36,7 @@ import { CommonModule } from '@angular/common';
           <div class="price-card featured">
             <div class="popular-badge">MÁS ELEGIDO</div>
             <div class="card-header">
-              <h3>Transformación</h3>
+              <h3>Transformación Total</h3>
               <div class="price"><span>$</span>1,500<small>/mes</small></div>
             </div>
             <ul class="features">
@@ -53,7 +53,7 @@ import { CommonModule } from '@angular/common';
           <!-- Plan 3 -->
           <div class="price-card">
             <div class="card-header">
-              <h3>Nutrición Pro</h3>
+              <h3>Plan Nutricional Pro</h3>
               <div class="price"><span>$</span>600<small>/mes</small></div>
             </div>
             <ul class="features">
@@ -79,17 +79,29 @@ import { CommonModule } from '@angular/common';
     .section-header {
       text-align: center;
       margin-bottom: 60px;
+      padding: 0 15px;
+      overflow-x: hidden;
       .subtitle { color: #E4007C; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; }
-      .section-title { font-size: 42px; margin: 10px 0; span { color: #E4007C; } }
-      .description { color: #888; max-width: 600px; margin: 0 auto; }
+      .section-title { 
+        font-size: clamp(24px, 7vw, 42px); 
+        margin: 10px 0; 
+        line-height: 1.2;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        span { color: #E4007C; display: inline-block; max-width: 100%; } 
+      }
+      .description { color: #888; max-width: 600px; margin: 0 auto; font-size: 14px; }
     }
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       max-width: 1100px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .price-card {
@@ -183,9 +195,17 @@ import { CommonModule } from '@angular/common';
       }
     }
 
-    @media (max-width: 768px) {
-      .pricing-section { padding: 60px 20px; }
-      .section-title { font-size: 32px; }
+    @media (max-width: 850px) {
+      .pricing-section { padding: 60px 0; overflow: hidden; }
+      .section-title { font-size: 24px !important; text-align: center; }
+      .pricing-grid { 
+        grid-template-columns: 1fr !important; 
+        gap: 20px; 
+        padding: 0 10px; 
+        width: 100%;
+      }
+      .price-card { padding: 25px 15px; margin: 0 5px; }
+      .price-card.featured .popular-badge { font-size: 10px; padding: 4px 15px; }
     }
   `]
 })
